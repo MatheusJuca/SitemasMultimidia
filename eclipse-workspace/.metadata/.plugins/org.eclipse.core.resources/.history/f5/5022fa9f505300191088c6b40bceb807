@@ -1,0 +1,18 @@
+package br.com.compiladores.analisadorLexico;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+	public static void main(String[] args) {
+			String caminho = "C:\\Users\\mathe\\eclipse-workspace\\Compiladores\\src\\Compiladores.txt";
+			LeitorDeArquivo leitorDeArquivo = new LeitorDeArquivo();
+			String linha = "Program Pgrau ;";
+			String[] analiseDaLinha = linha.split("\\r\\n\\s");
+			for (String al : analiseDaLinha) {
+				boolean email = al.matches("[a-zA-Z_0-9]*[\r]*");
+				System.out.println("Qualquer caractere: "+email);
+			}
+		 }
+}

@@ -1,0 +1,20 @@
+package br.com.compiladores.analisadorLexico;
+
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String caminho = "C:\\Users\\mathe\\eclipse-workspace\\Compiladores\\src\\Compiladores.txt";
+		LeitorDeArquivo leitorDeArquivo = new LeitorDeArquivo();
+		try {
+			String mensagemDeErro = leitorDeArquivo.leituraDoArquivo(leitorDeArquivo.defineArquivoDeLeitura(caminho));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

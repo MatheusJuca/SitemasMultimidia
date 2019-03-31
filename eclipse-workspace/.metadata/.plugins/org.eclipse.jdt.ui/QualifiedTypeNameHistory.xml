@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="br.com.compiladores.analisadorLexico.AnalisadorLexico"/>
+<fullyQualifiedTypeName name="br.com.compiladores.analisadorLexico.LeitorDeArquivo"/>
+</qualifiedTypeNameHistroy>

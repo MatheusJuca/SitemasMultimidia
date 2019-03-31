@@ -1,0 +1,27 @@
+package br.com.compiladores.analisadorLexico;
+
+public class AnalisadorLexico {
+
+	public static String[] tokens = { "Program", "Var", ";", "Const", "Begin", "Read", "End.", ",", ":", "(", ")", "=",
+			"+", "Write", "real", "*", ":=" };
+
+	public Boolean analisaPalavras(Integer contador, String[] listaPalavras) {
+		for (String lp : listaPalavras) {
+			if (lp.matches("[a-zA-Z_0-9]*;?") || analisaPalavra(lp)) {
+				continue;
+			} else {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public Boolean analisaPalavra(String palavra) {
+		for (String comparativo : tokens) {
+			if (comparativo.equals(palavra)) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

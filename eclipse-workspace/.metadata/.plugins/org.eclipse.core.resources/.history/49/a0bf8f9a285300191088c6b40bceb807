@@ -1,0 +1,26 @@
+package br.com.compiladores.analisadorLexico;
+
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class LeitorDeArquivo {
+	public FileReader defineArquivoDeLeitura(String nomeDoArquivo) throws FileNotFoundException {
+		return new FileReader(nomeDoArquivo);
+	}
+	public String leituraDoArquivo(FileReader arquivoDeLeitura) throws IOException {
+		BufferedReader br = new BufferedReader(arquivoDeLeitura);
+		String texto = "";
+		Integer contador = 0;
+		
+		while (br.ready()) {
+			
+			String linha = br.readLine();
+			contador++;
+			texto = texto + linha;
+		}
+	return texto;
+	}
+}

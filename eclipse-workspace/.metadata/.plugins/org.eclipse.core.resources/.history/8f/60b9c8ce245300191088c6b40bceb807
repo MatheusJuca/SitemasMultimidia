@@ -1,0 +1,5 @@
+package br.com.compiladores.analisadorLexico;
+
+public class LeitorDeArquivo {
+
+}

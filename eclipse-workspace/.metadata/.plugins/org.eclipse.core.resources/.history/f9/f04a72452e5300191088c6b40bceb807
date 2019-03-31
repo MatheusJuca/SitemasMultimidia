@@ -1,0 +1,20 @@
+package br.com.compiladores.analisadorLexico;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+	public static void main(String[] args) {
+		 String string = "oi eu sou o goku";
+		 String saida = "";
+		 Pattern pattern = Pattern
+		 .compile("[A-Z][a-z]*");
+		 Matcher matcher = pattern.matcher(string);
+		 while (matcher.find()) {
+		 saida += matcher.group();
+		 }
+
+	}
+
+}

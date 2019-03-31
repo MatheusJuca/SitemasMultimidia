@@ -1,0 +1,19 @@
+package br.com.compiladores.analisadorLexico;
+
+public class AnalisadorLexico {
+
+	public static String[] tokens = { "Program", "Var", ";", "Const", "Begin", "Read", "End.", ",", ":", "(", ")", "=",
+			"+", "Write", "A", "x", "b", "B", "real", "y", "*", "2", "3", ":=", "b;" };
+
+	public Boolean analisaLinha(Integer contador, String linha, String[] listaPalavras) {
+		if (linha.matches("[a-zA-Z_0-9]")) {
+			for (String lp : listaPalavras) {
+
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+}
