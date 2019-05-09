@@ -4,6 +4,8 @@
 ###-Informações Gerais-
 
 **Nome atual do jogo:** A vingança do Dr.E!
+
+
 **Plataforma:** Web
 **Engine usada:** Phaser
 **Estilo gráfico:** Pixel Art (estilo de 16-bits, com lineart)
