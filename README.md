@@ -39,7 +39,7 @@ Existem dois personagens principais, o vilão chamado de Dr.E e o herói Smashin
 ###3-Cenário
 *Explicação sobre o cenário no geral, as influências, o estilo da casa, cores, qualquer coisa. Também pode ir incluindo desenhos das fases e planejamentos de level design)
 
-###4-Trilha Sonora
+###4-Trilha Sonora 
 Nesse primeiro momento, o plano é que Dr. E seja o mais pitoresco e clichê possível, tal qual sua música tema. Portanto, a presença do vilão na tela remete à músicas de filmes dos anos 60, como saloons e mocinhas amarradas nos trilhos do trem. A música só é alterada pela presença marcante de Smashing Smile e sua presença épica. Ambas as trilhas sonoras e a sonoplastia estão em produção.
 
 ###5-Referências 
