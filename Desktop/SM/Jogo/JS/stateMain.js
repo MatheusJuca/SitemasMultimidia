@@ -44,8 +44,8 @@ var StateMain = {
         this.city1=game.add.tileSprite(0,0,game.width,game.height/3,"city1");
         this.city1.y=game.height-this.city1.height;
 
-        this.city2.autoScroll(-50,0);
-        this.city1.autoScroll(-150,0);
+        this.city2.autoScroll(50,0);
+        this.city1.autoScroll(150,0);
 
         //Adiciona o chao
         this.floor=game.add.tileSprite(0,game.height*.9,game.width,50,"floor");
@@ -61,6 +61,7 @@ var StateMain = {
         this.hero.animations.play("run");
         this.hero.width = game.width / 12;
         this.hero.scale.y = this.hero.scale.x;
+        this.hero.scale.x *= -1;
         this.hero.anchor.set(0.5, 1);
         //Adiciona a barra de pulo acima do personagem
         this.powerBar = game.add.sprite(this.hero.x + this.hero.width / 2, this.hero.y - this.hero.height / 2, "bar");
