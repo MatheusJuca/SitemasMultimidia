@@ -49,11 +49,11 @@ var StateMain = {
 
         //Adiciona o chao
         this.floor=game.add.tileSprite(0,game.height*.9,game.width,50,"floor");
-        this.floor.autoScroll(-200,0);
+        this.floor.autoScroll(200,0);
         //
         //
         //adiciona o personagem principal 
-        this.hero = game.add.sprite(game.width * .2, this.floor.y, "hero");
+        this.hero = game.add.sprite(game.width * .8, this.floor.y, "hero");
         //faz animacao dos personagens
         this.hero.animations.add("die", this.makeArray(0, 10), 12, false);
         this.hero.animations.add("jump", this.makeArray(20, 30), 12, false);
@@ -130,14 +130,14 @@ var StateMain = {
             var block = game.add.sprite(0, -i * 32, "block");
             this.blocks.add(block);
         }
-        this.blocks.x = game.width - this.blocks.width
+        this.blocks.x = 0 + this.blocks.width
         this.blocks.y = this.floor.y - 32;
         //
         //Loop para cada bloco e fisica
         this.blocks.forEach(function(block) {
             //permite fisica
             game.physics.enable(block, Phaser.Physics.ARCADE);
-            block.body.velocity.x = -200;
+            block.body.velocity.x = 200;
             //Aplica alguma gravidade mas nao muita para os blocos nao colidirem uns com os outros
             block.body.gravity.y = 3;
             //Seta bounce para os blocos reagirem ao contato com o personagem
@@ -152,7 +152,7 @@ var StateMain = {
         //Seleciona um numero de cima da tela entre 10 e 40 porcento da altura da tela para spwanar
         var birdY = game.rnd.integerInRange(game.height * .1, game.height * .4);
         //Add sprites do passaro
-        this.bird = game.add.sprite(game.width + 100, birdY, "bird");
+        this.bird = game.add.sprite(0, birdY, "bird");
         this.bird.animations.add("fly",this.makeArray(0,8),12,true);
         this.bird.animations.play("fly");
         //
@@ -160,7 +160,7 @@ var StateMain = {
         //adiciona fisica
         game.physics.enable(this.bird, Phaser.Physics.ARCADE);
         //Seta velocidade acima da dos blocos para evitar paredes impossiveis
-        this.bird.body.velocity.x = -340;
+        this.bird.body.velocity.x = 340;
         //Seta bounce do passaro
         this.bird.body.bounce.set(2, 2);
 
@@ -198,14 +198,14 @@ var StateMain = {
         //get primeiro filo
         var fchild = this.blocks.getChildAt(0);
         //se fora da tela reseta logica de criar blocos
-        if (fchild.x < -game.width) {
+        if (fchild.x >= game.width) {
             this.makeBlocks();
 			score += 10;
 			scoreDisplay.text = score;
 			
         }
         //se passaro fora da tela reseta logica de criar passaros
-        if (this.bird.x < 0) {
+        if (this.bird.x > game.width) {
             this.makeBird();
 			score += 15;
 			scoreDisplay.text = score;
