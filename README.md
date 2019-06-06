@@ -1,10 +1,12 @@
 # Sistemas Multimidia 
-<br>
-# GBD- A vingança do Dr.E! 
+____________________________
+
+## GBD- A vingança do Dr.E! 
+
 ### -Informações Gerais- 
  
  
-**Nome atual do jogo:** A vingança do Dr.E! <br>
+**Nome atual do jogo:** A vingança do Dr.E! 
 
 
 **Plataforma:** Web
