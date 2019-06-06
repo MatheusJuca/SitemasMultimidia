@@ -1,7 +1,7 @@
 # Sistemas Multimidia 
 ____________________________
 
-## GBD- A vingança do Dr.E! 
+## GBD - A vingança do Dr.E! 
 
 ### -Informações Gerais- 
  
@@ -34,15 +34,15 @@ Neste jogo você controla o vilão! A ideia do jogo é fazer o que todo runner c
 #### - GAMEPLAY - 
 
 
-O jogo funciona como um runner comum, mas você vai da direita para a esquerda.  <br>
-O jogo será para mobile e possui, inicialmente, duas ações possíveis.  <br>
- Um “tap” para pular, segurando a tela por mais tempo consegue variar o tamanho do pulo.  <br>
-Um “slide” indo de cima para baixo vai fazer o personagem deslizar pelo chão, podendo desviar de obstáculos na sua linha de frente assim como passar por passagens bloqueadas de alguma forma.  <br>
-As moedas são consideradas coisas comum dos heróis, nesse caso elas devem ser evitadas e corrompem o nível de maldade do seu vilão, se ele chegar a 0 o jogo acaba.  <br>
-As moedas comumente dos jogos seriam vilões pequenos, teria que ser feito o design de diversos vilões genéricos para serem recrutados, cada um valendo uma pontuação baseada no seu tamanho (pode ser revisto) e afetam no seu nível de vilania
-Vilões de porte médio são allies, além de acrescentarem à vilania, também podem influenciar na jogabilidade, como abrir portas, habilitar caminhos, auxiliar no combate, voar e etc.  <br>
-Uma barra de vilania, que representa o quanto de influência você tem sobre outros vilões, serve como uma barra de XP do jogo podendo habilitar certos upgrades.  <br>
-Uma barra de maldade é o que é resetado a cada nova interação do jogo, serve como a vida do personagem e ela vai diminuindo a cada moeda pega e a cada encontro com o herói.  <br>
+-O jogo funciona como um runner comum, mas você vai da direita para a esquerda.  <br>
+-O jogo será para mobile e possui, inicialmente, duas ações possíveis.  <br>
+-Um “tap” para pular, segurando a tela por mais tempo consegue variar o tamanho do pulo.  <br>
+-Um “slide” indo de cima para baixo vai fazer o personagem deslizar pelo chão, podendo desviar de obstáculos na sua linha de frente -assim como passar por passagens bloqueadas de alguma forma.  <br>
+-As moedas são consideradas coisas comum dos heróis, nesse caso elas devem ser evitadas e corrompem o nível de maldade do seu vilão, se ele chegar a 0 o jogo acaba.  <br>
+-As moedas comumente dos jogos seriam vilões pequenos, teria que ser feito o design de diversos vilões genéricos para serem recrutados, cada um valendo uma pontuação baseada no seu tamanho (pode ser revisto) e afetam no seu nível de vilania
+-Vilões de porte médio são allies, além de acrescentarem à vilania, também podem influenciar na jogabilidade, como abrir portas, habilitar caminhos, auxiliar no combate, voar e etc.  <br>
+-Uma barra de vilania, que representa o quanto de influência você tem sobre outros vilões, serve como uma barra de XP do jogo podendo habilitar certos upgrades.  <br>
+-Uma barra de maldade é o que é resetado a cada nova interação do jogo, serve como a vida do personagem e ela vai diminuindo a cada moeda pega e a cada encontro com o herói.  <br>
 
 
 
@@ -66,13 +66,9 @@ Nesse primeiro momento, o plano é que Dr. E seja o mais pitoresco e clichê pos
 ### 5-Referências  
 
 Temple run 
-
 Jetpack joyride 
-
 Villainous 
-
 Burrito Bison 
-
 Run or die 
 
 
