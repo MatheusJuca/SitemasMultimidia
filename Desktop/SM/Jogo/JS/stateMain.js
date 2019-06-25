@@ -17,7 +17,11 @@ var StateMain = {
 
     },
     create: function() {
+        this.isDead = false;
+        this.isSliding = false;
         this.clickLock = false;
+        cont = 0;
+        isJumping = false;
         this.power = 0;
         //Coloca background preto na tela de game over
         game.stage.backgroundColor = "#000000";
@@ -58,6 +62,7 @@ var StateMain = {
         this.hero.animations.add("die", this.makeArray(0, 10), 12, false);
         this.hero.animations.add("jump", this.makeArray(20, 30), 12, false);
         this.hero.animations.add("run", this.makeArray(30, 40), 12, true);
+        this.hero.animations.add("slide", this.makeArray(40,50), 12, false);
         this.hero.animations.play("run");
         this.hero.width = game.width / 12;
         this.hero.scale.y = this.hero.scale.x;
@@ -83,6 +88,7 @@ var StateMain = {
         this.startY = this.hero.y;
         //set listeners
         game.input.onDown.add(this.mouseDown, this);
+        cursors = game.input.keyboard.createCursorKeys();
         this.blocks = game.add.group();
         this.makeBlocks();
         this.makeBird();
@@ -98,15 +104,17 @@ var StateMain = {
         if (this.clickLock == true) {
             return;
         }
-        if (this.hero.y != this.startY) {
+        if (cont > 2){
             return;
         }
         game.input.onDown.remove(this.mouseDown, this);
         this.timer = game.time.events.loop(Phaser.Timer.SECOND / 1000, this.increasePower, this);
         game.input.onUp.add(this.mouseUp, this);
+        cont += 1;
     },
-    mouseUp: function() {
+    mouseUp: function() { 
         game.input.onUp.remove(this.mouseUp, this);
+        isJumping = true;
         this.doJump();
         game.time.events.remove(this.timer);
         this.power = 0;
@@ -122,7 +130,18 @@ var StateMain = {
         }
     },
     doJump: function() {
+        isJumping = true;
         this.hero.body.velocity.y = -this.power * 12;
+    },
+    
+    doSlide: function() {
+        this.isSliding = true;
+        if (!this.isDead){
+            if (!this.isJumping){
+                this.hero.animations.play("slide");
+            }
+        }   
+        this.isSliding = false;
     },
     makeBlocks: function() {
         this.blocks.removeAll();
@@ -171,10 +190,16 @@ var StateMain = {
 
     },
 	//Seta animacao apenas quando o personagem e construido dentro do jogo
-    onGround() {
+    onGround() { 
+        cont = 0;
         if (this.hero) {
-            this.hero.animations.play("run");
-        }
+            if (!this.isDead){
+                if (!this.isSliding){
+                    this.hero.y = this.floor.y;
+                    this.hero.animations.play("run");
+                }
+            }
+        } 
     },
     update: function() {
         game.physics.arcade.collide(this.hero, this.floor, this.onGround, null, this);
@@ -217,12 +242,17 @@ var StateMain = {
             this.delayOver();
         }
 
+        if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
+            this.doSlide();
+        }
     },
     delayOver: function() {
         this.clickLock = true;
+        this.isDead = true;
         if (this.hero) {
-            this.hero.animations.play("die");
-            
+            if (!this.isSliding){
+                this.hero.animations.play("die"); 
+            }
         }
         game.time.events.add(Phaser.Timer.SECOND, this.gameOver, this);
     },
