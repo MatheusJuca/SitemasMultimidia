@@ -392,7 +392,7 @@
 	"spriteSourceSize": {"x":2,"y":1,"w":195,"h":193},
 	"sourceSize": {"w":197,"h":195}
 },
-{
+{ 
 	"filename": "Slide__009.png",
 	"frame": {"x":1767,"y":741,"w":195,"h":192},
 	"rotated": false,

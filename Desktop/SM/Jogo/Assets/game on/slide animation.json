@@ -1,0 +1,34 @@
+{ "frames": {
+   "slide animation 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 120, "h": 110 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 110 },
+    "sourceSize": { "w": 120, "h": 110 },
+    "duration": 100
+   },
+   "slide animation 1.aseprite": {
+    "frame": { "x": 120, "y": 0, "w": 120, "h": 110 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 110 },
+    "sourceSize": { "w": 120, "h": 110 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.9",
+  "image": "C:\\Users\\mathe\\Documents\\Asesprite\\Projetos\\slide animation.png",
+  "format": "RGBA8888",
+  "size": { "w": 240, "h": 110 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 5", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

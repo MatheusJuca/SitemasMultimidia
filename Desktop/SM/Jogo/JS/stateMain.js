@@ -7,7 +7,7 @@ var StateMain = {
 
         game.load.atlasJSONHash('bird','Jogo/Assets/bird.png','Jogo/Assets/bird.json');
         game.load.image("playAgain", "Jogo/Assets/playAgain.png");
-        game.load.atlasJSONHash('hero', 'Jogo/Assets/explorer.png', 'Jogo/Assets/explorer.json');
+        game.load.atlasJSONHash('doctor', 'Jogo/Assets/doctor.png', 'Jogo/Assets/doctor.json');
        //
        //
        //
@@ -21,7 +21,6 @@ var StateMain = {
         this.isSliding = false;
         this.clickLock = false;
         cont = 0;
-        isJumping = false;
         this.power = 0;
         //Coloca background preto na tela de game over
         game.stage.backgroundColor = "#000000";
@@ -57,19 +56,20 @@ var StateMain = {
         //
         //
         //adiciona o personagem principal 
-        this.hero = game.add.sprite(game.width * .8, this.floor.y, "hero");
+        this.doctor = game.add.sprite(game.width * .8, this.floor.y, "doctor");
         //faz animacao dos personagens
-        this.hero.animations.add("die", this.makeArray(0, 10), 12, false);
-        this.hero.animations.add("jump", this.makeArray(20, 30), 12, false);
-        this.hero.animations.add("run", this.makeArray(30, 40), 12, true);
-        this.hero.animations.add("slide", this.makeArray(40,50), 12, false);
-        this.hero.animations.play("run");
-        this.hero.width = game.width / 12;
-        this.hero.scale.y = this.hero.scale.x;
-        this.hero.scale.x *= -1;
-        this.hero.anchor.set(0.5, 1);
+        this.doctor.animations.add("die", this.makeArray(0, 5), 12, false);
+        this.doctor.animations.add("jump", this.makeArray(5, 8), 12, false);
+        this.doctor.animations.add("run", this.makeArray(11, 16), 12, true);
+        this.doctor.animations.add("slide", this.makeArray(9, 10), 12, false);
+        this.doctor.animations.play("run");
+        this.doctor.width = game.width / 7;
+        this.doctor.scale.y = this.doctor.scale.x;
+        this.doctor.scale.x *= -1;
+        this.doctor.anchor.set(0.5, 1);
+        this.doctor.immovable = true;
         //Adiciona a barra de pulo acima do personagem
-        this.powerBar = game.add.sprite(this.hero.x + this.hero.width / 2, this.hero.y - this.hero.height / 2, "bar");
+        this.powerBar = game.add.sprite(this.doctor.x + this.doctor.width / 2, this.doctor.y - this.doctor.height / 2, "bar");
         this.powerBar.width = 0;
       
         //Comeca engine de fisica
@@ -79,13 +79,13 @@ var StateMain = {
         //Permite fisica do personagem principal
         //
         //
-        game.physics.enable(this.hero, Phaser.Physics.ARCADE);
+        game.physics.enable(this.doctor, Phaser.Physics.ARCADE);
         game.physics.enable(this.floor, Phaser.Physics.ARCADE);
-        this.hero.body.gravity.y = 500;
-        this.hero.body.collideWorldBounds = true;
+        this.doctor.body.gravity.y = 500;
+        this.doctor.body.collideWorldBounds = true;
         this.floor.body.immovable = true;
         //Define posicao inicial
-        this.startY = this.hero.y;
+        this.startY = this.doctor.y;
         //set listeners
         game.input.onDown.add(this.mouseDown, this);
         cursors = game.input.keyboard.createCursorKeys();
@@ -114,13 +114,12 @@ var StateMain = {
     },
     mouseUp: function() { 
         game.input.onUp.remove(this.mouseUp, this);
-        isJumping = true;
         this.doJump();
         game.time.events.remove(this.timer);
         this.power = 0;
         this.powerBar.width = 0;
         game.input.onDown.add(this.mouseDown, this);
-        this.hero.animations.play("jump");
+        this.doctor.animations.play("jump");
     },
     increasePower: function() {
         this.power++;
@@ -130,18 +129,14 @@ var StateMain = {
         }
     },
     doJump: function() {
-        isJumping = true;
-        this.hero.body.velocity.y = -this.power * 12;
+        this.doctor.body.velocity.y = -this.power * 12;
     },
     
     doSlide: function() {
         this.isSliding = true;
         if (!this.isDead){
-            if (!this.isJumping){
-                this.hero.animations.play("slide");
-            }
+            this.doctor.animations.play("slide");
         }   
-        this.isSliding = false;
     },
     makeBlocks: function() {
         this.blocks.removeAll();
@@ -182,7 +177,7 @@ var StateMain = {
         //Seta velocidade acima da dos blocos para evitar paredes impossiveis
         this.bird.body.velocity.x = 340;
         //Seta bounce do passaro
-        this.bird.body.bounce.set(2, 2);
+        this.bird.body.bounce.set(2,2);
 
         this.bird.width=game.width*.07;
         this.bird.scale.y=this.bird.scale.x;
@@ -192,21 +187,22 @@ var StateMain = {
 	//Seta animacao apenas quando o personagem e construido dentro do jogo
     onGround() { 
         cont = 0;
-        if (this.hero) {
+        this.isSliding = false;
+        if (this.doctor) {
             if (!this.isDead){
                 if (!this.isSliding){
-                    this.hero.y = this.floor.y;
-                    this.hero.animations.play("run");
+                    this.doctor.y = this.floor.y;
+                    this.doctor.animations.play("run");
                 }
             }
         } 
     },
     update: function() {
-        game.physics.arcade.collide(this.hero, this.floor, this.onGround, null, this);
+        game.physics.arcade.collide(this.doctor, this.floor, this.onGround, null, this);
         //
         //colide personagem e chao
         //
-        game.physics.arcade.collide(this.hero, this.blocks, this.delayOver, null, this);
+        game.physics.arcade.collide(this.doctor, this.blocks, this.delayOver, null, this);
         //
         //colide personagem e blocos
         //
@@ -219,7 +215,7 @@ var StateMain = {
         game.physics.arcade.collide(this.blocks);
         //colide o personagem e o passaro
         //
-        game.physics.arcade.collide(this.hero, this.bird, this.delayOver, null, this);
+        game.physics.arcade.collide(this.doctor, this.bird, this.delayOver, null, this);
         //
         //get primeiro filo
         var fchild = this.blocks.getChildAt(0);
@@ -237,8 +233,8 @@ var StateMain = {
 			scoreDisplay.text = score;
         }
 		//logica de morte
-        if (this.hero.y < this.hero.height) {
-            this.hero.body.velocity.y = 200;
+        if (this.doctor.y < this.doctor.height) {
+            this.doctor.body.velocity.y = 200;
             this.delayOver();
         }
 
@@ -248,13 +244,18 @@ var StateMain = {
     },
     delayOver: function() {
         this.clickLock = true;
-        this.isDead = true;
-        if (this.hero) {
+        
+        if (this.doctor) {
             if (!this.isSliding){
-                this.hero.animations.play("die"); 
+                this.isDead = true;
+                this.doctor.animations.play("die"); 
+                game.time.events.add(Phaser.Timer.SECOND, this.gameOver, this);
+            }
+            else {
+                this.bird.kill();
+                this.makeBird();
             }
         }
-        game.time.events.add(Phaser.Timer.SECOND, this.gameOver, this);
     },
     gameOver: function() {
         game.state.start("StateOver");
