@@ -1,0 +1,72 @@
+{ "frames": [
+   {
+    "filename": "walking animation 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 119, "h": 125 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 119, "h": 125 },
+    "sourceSize": { "w": 119, "h": 125 },
+    "duration": 100
+   },
+   {
+    "filename": "walking animation 1.aseprite",
+    "frame": { "x": 119, "y": 0, "w": 119, "h": 125 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 119, "h": 125 },
+    "sourceSize": { "w": 119, "h": 125 },
+    "duration": 100
+   },
+   {
+    "filename": "walking animation 2.aseprite",
+    "frame": { "x": 238, "y": 0, "w": 119, "h": 125 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 119, "h": 125 },
+    "sourceSize": { "w": 119, "h": 125 },
+    "duration": 100
+   },
+   {
+    "filename": "walking animation 3.aseprite",
+    "frame": { "x": 357, "y": 0, "w": 119, "h": 125 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 119, "h": 125 },
+    "sourceSize": { "w": 119, "h": 125 },
+    "duration": 100
+   },
+   {
+    "filename": "walking animation 4.aseprite",
+    "frame": { "x": 476, "y": 0, "w": 119, "h": 125 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 119, "h": 125 },
+    "sourceSize": { "w": 119, "h": 125 },
+    "duration": 100
+   },
+   {
+    "filename": "walking animation 5.aseprite",
+    "frame": { "x": 595, "y": 0, "w": 119, "h": 125 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 119, "h": 125 },
+    "sourceSize": { "w": 119, "h": 125 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.9",
+  "image": "C:\\xampp\\htdocs\\SM\\Jogo\\Assets\\game on\\walking animation.png",
+  "format": "RGBA8888",
+  "size": { "w": 714, "h": 125 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 2 Copy", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

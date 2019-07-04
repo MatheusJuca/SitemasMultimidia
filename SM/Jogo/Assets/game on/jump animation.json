@@ -1,0 +1,50 @@
+{ "frames": {
+   "jump animation 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 148, "h": 151 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 148, "h": 151 },
+    "sourceSize": { "w": 148, "h": 151 },
+    "duration": 100
+   },
+   "jump animation 1.aseprite": {
+    "frame": { "x": 148, "y": 0, "w": 148, "h": 151 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 148, "h": 151 },
+    "sourceSize": { "w": 148, "h": 151 },
+    "duration": 100
+   },
+   "jump animation 2.aseprite": {
+    "frame": { "x": 296, "y": 0, "w": 148, "h": 151 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 148, "h": 151 },
+    "sourceSize": { "w": 148, "h": 151 },
+    "duration": 100
+   },
+   "jump animation 3.aseprite": {
+    "frame": { "x": 444, "y": 0, "w": 148, "h": 151 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 148, "h": 151 },
+    "sourceSize": { "w": 148, "h": 151 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.9",
+  "image": "C:\\Users\\mathe\\Documents\\Asesprite\\Projetos\\jump animation.png",
+  "format": "RGBA8888",
+  "size": { "w": 592, "h": 151 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 4", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
